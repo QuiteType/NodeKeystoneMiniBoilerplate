@@ -23,7 +23,14 @@ keystone.init({
 	'auto update': true,
 	'session': true,
 	'auth': true,
-	'user model': 'N'
+	'user model': 'N',
+	
+	// Generate in terminal
+	// python
+	// import base64
+	// import uuid
+	// print base64.b64encode(uuid.uuid4().bytes + uuid.uuid4().bytes)
+	'cookie secret': 'hBLd2ucWQES3YplqYUz/y9z+fsMJXEF/paCjYMC1Q0w='
 
 });
 
