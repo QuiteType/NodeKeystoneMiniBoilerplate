@@ -9,7 +9,7 @@
  */
 
 var _ = require('underscore');
-
+var keystone = require('keystone');
 
 /**
 	Initialises the standard view locals
@@ -28,8 +28,15 @@ exports.initLocals = function(req, res, next) {
 	];
 	
 	locals.user = req.user;
-	
-	next();
+
+	keystone.list('SiteInfo').model.find()
+		.where('title', 'MCKL')
+		.exec( function(err, results) {
+			
+				locals.SiteInfo = results;
+				next(err);
+			}
+		);
 	
 };
 
