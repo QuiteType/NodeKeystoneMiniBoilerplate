@@ -3,11 +3,11 @@
   "camelcase": true,
   "curly": false,  /* custom */
   "eqeqeq": true,
-  "es3": false,
+  "es3": true,
   "forin": true,
   "freeze": true,
   "immed": true,
-  "indent": 1,  /* custom */
+  "indent": 4,  /* custom */
   "latedef": true,
   "newcap": true,
   "noarg": true,
@@ -55,11 +55,17 @@
   "onevar": true,  /* custom */
   "globals": {  /* custom */
     /* MOCHA: http://stackoverflow.com/a/19572515/130638 */
-    "describe"   : false,
-    "it"         : false,
-    "before"     : false,
-    "beforeEach" : false,
-    "after"      : false,
-    "afterEach"  : false
+    "describe"    : false,
+    "it"          : false,
+    "before"      : false,
+    "beforeEach"  : false,
+    "after"       : false,
+    "afterEach"   : false,
+    "smartquotes" : false,
+    "_"           : false,
+    "pangrams"    : false,
+    "$"           : false,
+    "jQuery"      : false,
+    "data"        : false
   }
 }
