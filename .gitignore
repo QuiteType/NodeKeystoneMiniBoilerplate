@@ -29,3 +29,46 @@ node_modules
 
 # Ignore .DS_Store files on OS X
 .DS_Store
+
+# From Hackathon
+lib-cov
+*.seed
+*.log
+*.csv
+*.dat
+*.out
+*.pid
+*.gz
+*.swp
+
+*.pem
+
+
+pids
+logs
+results
+
+npm-debug.log
+node_modules
+.idea
+*.iml
+.DS_Store
+Thumbs.db
+
+public/tmp/**.*
+
+#GIT IS CAUSING ISSUES
+.profile
+.mongorc.js
+.jshintrc
+.env
+.bash_history
+.bash_logout
+.bashrc
+.editorconfig
+.ssh
+.npm
+.node-gyp/0.10.25
+.forever
+.config/configstore
+.cache
