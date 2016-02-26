@@ -1,0 +1,77 @@
+{
+  "name": "nodekeystoneminiboilerplate",
+  "version": "0.0.0",
+  "description": "My Gulp.js boilerplate for creating new web projects",
+  "author": {
+    "name": "Quinn Keaveney",
+    "url": "http://quitetype.com"
+  },
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/quitetype/nodekeystoneminiboilerplate"
+  },
+  "dependencies": {
+    "keystone": "*",
+    "browserify": "*",
+    "async": "*",
+    "colors": "*",
+    "grappling-hook": "*",
+    "jade": "*",
+    "keystone-utils": "*",
+    "keystoneplus": "*",
+    "mongodb": "*",
+    "mongoose": "*",
+    "underscore": "*",
+    "node-sass": "*",
+    "node-sass-middleware": "*", 
+    "dotenv": "*"
+  },
+  "devDependencies": {
+    "del": "*",
+    "gulp": "*",
+    "gulp-autoprefixer": "*",
+    "gulp-concat": "*",
+    "gulp-css-globbing": "*",
+    "gulp-file-include": "*",
+    "gulp-flatten": "*",
+    "gulp-footer": "*",
+    "gulp-header": "*",
+    "gulp-include": "*",
+    "gulp-inject": "*",
+    "gulp-jshint": "*",
+    "gulp-karma": "*",
+    "gulp-livereload": "*",
+    "gulp-markdown": "*",
+    "gulp-minify-css": "*",
+    "gulp-notify": "*",
+    "gulp-plumber": "*",
+    "gulp-rename": "*",
+    "gulp-ruby-sass": "*",
+    "gulp-sass": "*",
+    "gulp-svgmin": "*",
+    "gulp-svgstore": "*",
+    "gulp-tap": "*",
+    "gulp-uglify": "*",
+    "gulp-watch": "*",
+    "jasmine": "*",
+    "jshint": "*",
+    "jshint-stylish": "*",
+    "karma": "*",
+    "karma-coverage": "*",
+    "karma-htmlfile-reporter": "*",
+    "karma-jasmine": "*",
+    "karma-phantomjs-launcher": "*",
+    "karma-spec-reporter": "*",
+    "lazypipe": "*",
+    "node-fs": "*"
+  },
+  "engines": {
+    "node": ">=0.10.22",
+    "npm": ">=1.3.14"
+  },
+  "scripts": {
+    "start": "node start.js"
+  },
+  "main": "start.js"
+}

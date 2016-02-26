@@ -1,0 +1,148 @@
+/**
+ * JUST THE FULL BANNER
+ */
+
+@font-face {
+  font-family: 'Fort';
+  src: url("fonts/mckl/Fort-Thin.eot");
+  /* IE9 Compat Modes */
+  src: url("fonts/mckl/Fort-Thin.eot?#iefix") format("embedded-opentype"), url("fonts/mckl/Fort-Thin.woff") format("woff"), url("fonts/mckl/Fort-Thin.ttf") format("truetype"), url("fonts/mckl/Fort-Thin.svg#609f33a250a51b205ede3c0c3040157a") format("svg");
+  /* Legacy iOS */
+  font-style: normal;
+  font-weight: 100;
+}
+@font-face {
+  font-family: 'Fort';
+  src: url("fonts/mckl/Fort-ThinItalic.eot");
+  /* IE9 Compat Modes */
+  src: url("fonts/mckl/Fort-ThinItalic.eot?#iefix") format("embedded-opentype"), url("fonts/mckl/Fort-ThinItalic.woff") format("woff"), url("fonts/mckl/Fort-ThinItalic.ttf") format("truetype"), url("fonts/mckl/Fort-ThinItalic.svg#7858cdec5b90ba76738456e99d6c5798") format("svg");
+  /* Legacy iOS */
+  font-style: italic;
+  font-weight: 100;
+}
+@font-face {
+  font-family: 'Fort';
+  src: url("fonts/mckl/Fort-Extralight.eot");
+  /* IE9 Compat Modes */
+  src: url("fonts/mckl/Fort-Extralight.eot?#iefix") format("embedded-opentype"), url("fonts/mckl/Fort-Extralight.woff") format("woff"), url("fonts/mckl/Fort-Extralight.ttf") format("truetype"), url("fonts/mckl/Fort-Extralight.svg#9354ff12854eadc5301778e0ea717d84") format("svg");
+  /* Legacy iOS */
+  font-style: normal;
+  font-weight: 200;
+}
+@font-face {
+  font-family: 'Fort';
+  src: url("fonts/mckl/Fort-ExtralightItalic.eot");
+  /* IE9 Compat Modes */
+  src: url("fonts/mckl/Fort-ExtralightItalic.eot?#iefix") format("embedded-opentype"), url("fonts/mckl/Fort-ExtralightItalic.woff") format("woff"), url("fonts/mckl/Fort-ExtralightItalic.ttf") format("truetype"), url("fonts/mckl/Fort-ExtralightItalic.svg#2a31181f8f4ff691f515ce542555aee3") format("svg");
+  /* Legacy iOS */
+  font-style: italic;
+  font-weight: 200;
+}
+@font-face {
+  font-family: 'Fort';
+  src: url("fonts/mckl/Fort-Light.eot");
+  /* IE9 Compat Modes */
+  src: url("fonts/mckl/Fort-Light.eot?#iefix") format("embedded-opentype"), url("fonts/mckl/Fort-Light.woff") format("woff"), url("fonts/mckl/Fort-Light.ttf") format("truetype"), url("fonts/mckl/Fort-Light.svg#e8101a6e7d5ce76de50b01d7304502ed") format("svg");
+  /* Legacy iOS */
+  font-style: normal;
+  font-weight: 300;
+}
+@font-face {
+  font-family: 'Fort';
+  src: url("fonts/mckl/Fort-LightItalic.eot");
+  /* IE9 Compat Modes */
+  src: url("fonts/mckl/Fort-LightItalic.eot?#iefix") format("embedded-opentype"), url("fonts/mckl/Fort-LightItalic.woff") format("woff"), url("fonts/mckl/Fort-LightItalic.ttf") format("truetype"), url("fonts/mckl/Fort-LightItalic.svg#ae6cf4faca462af91011b1eff7fe1584") format("svg");
+  /* Legacy iOS */
+  font-style: italic;
+  font-weight: 300;
+}
+@font-face {
+  font-family: 'Fort';
+  src: url("fonts/mckl/Fort-Book.eot");
+  /* IE9 Compat Modes */
+  src: url("fonts/mckl/Fort-Book.eot?#iefix") format("embedded-opentype"), url("fonts/mckl/Fort-Book.woff") format("woff"), url("fonts/mckl/Fort-Book.ttf") format("truetype"), url("fonts/mckl/Fort-Book.svg#95984081131e6abbfc4bcfd1cffdf6a1") format("svg");
+  /* Legacy iOS */
+  font-style: normal;
+  font-weight: 400;
+}
+@font-face {
+  font-family: 'Fort';
+  src: url("fonts/mckl/Fort-BookItalic.eot");
+  /* IE9 Compat Modes */
+  src: url("fonts/mckl/Fort-BookItalic.eot?#iefix") format("embedded-opentype"), url("fonts/mckl/Fort-BookItalic.woff") format("woff"), url("fonts/mckl/Fort-BookItalic.ttf") format("truetype"), url("fonts/mckl/Fort-BookItalic.svg#a209d05e78b189d3c395ffbec519d298") format("svg");
+  /* Legacy iOS */
+  font-style: italic;
+  font-weight: 400;
+}
+@font-face {
+  font-family: 'Fort';
+  src: url("fonts/mckl/Fort-Medium.eot");
+  /* IE9 Compat Modes */
+  src: url("fonts/mckl/Fort-Medium.eot?#iefix") format("embedded-opentype"), url("fonts/mckl/Fort-Medium.woff") format("woff"), url("fonts/mckl/Fort-Medium.ttf") format("truetype"), url("fonts/mckl/Fort-Medium.svg#695ea5377ebaf43db93a3abf52211a98") format("svg");
+  /* Legacy iOS */
+  font-style: normal;
+  font-weight: 500;
+}
+@font-face {
+  font-family: 'Fort';
+  src: url("fonts/mckl/Fort-MediumItalic.eot");
+  /* IE9 Compat Modes */
+  src: url("fonts/mckl/Fort-MediumItalic.eot?#iefix") format("embedded-opentype"), url("fonts/mckl/Fort-MediumItalic.woff") format("woff"), url("fonts/mckl/Fort-MediumItalic.ttf") format("truetype"), url("fonts/mckl/Fort-MediumItalic.svg#3602ad9c4a61823af38bc501d7ca9df1") format("svg");
+  /* Legacy iOS */
+  font-style: italic;
+  font-weight: 500;
+}
+@font-face {
+  font-family: 'Fort';
+  src: url("fonts/mckl/Fort-Bold.eot");
+  /* IE9 Compat Modes */
+  src: url("fonts/mckl/Fort-Bold.eot?#iefix") format("embedded-opentype"), url("fonts/mckl/Fort-Bold.woff") format("woff"), url("fonts/mckl/Fort-Bold.ttf") format("truetype"), url("fonts/mckl/Fort-Bold.svg#780fe76718fc538eb5c0ae0e047aace6") format("svg");
+  /* Legacy iOS */
+  font-style: normal;
+  font-weight: 700;
+}
+@font-face {
+  font-family: 'Fort';
+  src: url("fonts/mckl/Fort-BoldItalic.eot");
+  /* IE9 Compat Modes */
+  src: url("fonts/mckl/Fort-BoldItalic.eot?#iefix") format("embedded-opentype"), url("fonts/mckl/Fort-BoldItalic.woff") format("woff"), url("fonts/mckl/Fort-BoldItalic.ttf") format("truetype"), url("fonts/mckl/Fort-BoldItalic.svg#1db43f2ee7c4a5735f510f6f52c463b5") format("svg");
+  /* Legacy iOS */
+  font-style: italic;
+  font-weight: 700;
+}
+@font-face {
+  font-family: 'Fort';
+  src: url("fonts/mckl/Fort-Extrabold.eot");
+  /* IE9 Compat Modes */
+  src: url("fonts/mckl/Fort-Extrabold.eot?#iefix") format("embedded-opentype"), url("fonts/mckl/Fort-Extrabold.woff") format("woff"), url("fonts/mckl/Fort-Extrabold.ttf") format("truetype"), url("fonts/mckl/Fort-Extrabold.svg#5dd4602bedfd2c707e887a1ca38d4f5c") format("svg");
+  /* Legacy iOS */
+  font-style: normal;
+  font-weight: 800;
+}
+@font-face {
+  font-family: 'Fort';
+  src: url("fonts/mckl/Fort-ExtraboldItalic.eot");
+  /* IE9 Compat Modes */
+  src: url("fonts/mckl/Fort-ExtraboldItalic.eot?#iefix") format("embedded-opentype"), url("fonts/mckl/Fort-ExtraboldItalic.woff") format("woff"), url("fonts/mckl/Fort-ExtraboldItalic.ttf") format("truetype"), url("fonts/mckl/Fort-ExtraboldItalic.svg#9aee70838ca05084440f12df7fbcb0eb") format("svg");
+  /* Legacy iOS */
+  font-style: italic;
+  font-weight: 800;
+}
+@font-face {
+  font-family: 'Fort';
+  src: url("fonts/mckl/Fort-Black.eot");
+  /* IE9 Compat Modes */
+  src: url("fonts/mckl/Fort-Black.eot?#iefix") format("embedded-opentype"), url("fonts/mckl/Fort-Black.woff") format("woff"), url("fonts/mckl/Fort-Black.ttf") format("truetype"), url("fonts/mckl/Fort-Black.svg#72f1164fd2b1211bc8e7c67fe1029516") format("svg");
+  /* Legacy iOS */
+  font-style: normal;
+  font-weight: 900;
+}
+@font-face {
+  font-family: 'Fort';
+  src: url("fonts/mckl/Fort-BlackItalic.eot");
+  /* IE9 Compat Modes */
+  src: url("fonts/mckl/Fort-BlackItalic.eot?#iefix") format("embedded-opentype"), url("fonts/mckl/Fort-BlackItalic.woff") format("woff"), url("fonts/mckl/Fort-BlackItalic.ttf") format("truetype"), url("fonts/mckl/Fort-BlackItalic.svg#d9c0742f6704cd86bc94779aeb8e2bcf") format("svg");
+  /* Legacy iOS */
+  font-style: italic;
+  font-weight: 900;
+}

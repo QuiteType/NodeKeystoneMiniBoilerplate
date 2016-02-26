@@ -1,0 +1,33 @@
+
+//Flash Messages
+
+@mixin alert-styles($color) {
+  @include gradient-vertical($start-color: $color, $end-color: darken($color, 7.5%));
+  border-color: darken($color, 15%);
+}
+
+@mixin alert-variant($background, $border, $text-color) {
+  background-color: $background;
+  border-color: $border;
+  color: $text-color;
+
+  hr {
+    border-top-color: darken($border, 5%);
+  }
+  .alert-link {
+    color: darken($text-color, 10%);
+  }
+}
+
+$state-brand-text:  	$color-brand !default;
+$state-brand-bg:    	lighten($color-brand, 30) !default;
+$state-brand-border:	darken(adjust-hue($state-brand-bg, -10), 5%) !default;
+
+$alert-brand-bg:    	$state-brand-bg !default;
+$alert-brand-text:  	$state-brand-text !default;
+$alert-brand-border:	$state-brand-border !default;
+
+.alert-specialOffer { 
+	@include alert-styles($alert-brand-bg); 
+	@include alert-variant($alert-brand-bg, $alert-brand-border, $alert-brand-text);
+}

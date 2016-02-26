@@ -1,0 +1,623 @@
+@charset "UTF-8";
+/* 
+
+O P E N T Y P E . C S S
+— Code originated from Typotheque: https://www.typotheque.com/articles/opentype_features_in_web_browsers_-_tests
+— Revisions made for some browsers.
+— Features included are: liga, liga_off, hlig, smcp, onum, lnum, tnum, sups, subs, ordn, zero, frac, calt, swsh, hist, kern, kern_off, ss01, c2sc, case, locl 
+
+*/
+/* ------------------------------------ Standard Ligatures and Discretionary Ligatures */
+/* This turns on both liga and dlig features */
+/* line 13, stdin */
+.liga_and_dlig {
+  /* low-level syntax */
+  font-feature-settings: "liga" on, "dlig" on;
+  /* vendor-prefixes */
+  -ms-font-feature-settings: "liga" 1, "dlig" 1;
+  -webkit-font-feature-settings: "liga" 1, "dlig" 1;
+  font-feature-settings: "liga" 1, "dlig" 1;
+  /* this also works in some cases to turn on ligatures, also turns on kerning*/
+  text-rendering: optimizeLegibility;
+  /* high-level syntax */
+  -webkit-font-variant-ligatures: common-ligatures;
+          font-variant-ligatures: common-ligatures;
+  -webkit-font-variant-ligatures: discretionary-ligatures;
+          font-variant-ligatures: discretionary-ligatures;
+}
+
+/* line 29, stdin */
+.swsh_and_liga {
+  /* low-level syntax */
+  font-feature-settings: "swsh" on, "liga" on;
+  /* vendor-prefixes */
+  -ms-font-feature-settings: "swsh" 1, "liga" 1;
+  -webkit-font-feature-settings: "swsh" 1, "liga" 1;
+  font-feature-settings: "swsh" 1, "liga" 1;
+}
+
+/* line 40, stdin */
+.liga {
+  /* low-level syntax */
+  font-feature-settings: "liga" on, "dlig" on;
+  /* vendor-prefixes */
+  -ms-font-feature-settings: "liga" 1, "dlig" 1;
+  -webkit-font-feature-settings: "liga" 1, "dlig" 1;
+  font-feature-settings: "liga" 1, "dlig" 1;
+  /*this also works in some cases to turn on ligatures, also turns on kerning*/
+  text-rendering: optimizeLegibility;
+  /* high-level syntax */
+  -webkit-font-variant-ligatures: common-ligatures;
+          font-variant-ligatures: common-ligatures;
+  -webkit-font-variant-ligatures: discretionary-ligatures;
+          font-variant-ligatures: discretionary-ligatures;
+}
+
+/* line 56, stdin */
+.slig {
+  /* low-level syntax */
+  font-feature-settings: "liga" on;
+  /* vendor-prefixes */
+  /* EDIT: new syntax for FF 15+ */
+  -ms-font-feature-settings: "liga";
+  -webkit-font-feature-settings: "liga";
+  font-feature-settings: "liga";
+  /* This also works in some cases to turn on ligatures, also adds kerning */
+  /* The ‘text-rendering’ property – ON */
+  text-rendering: optimizeLegibility;
+  /* high-level syntax */
+  -webkit-font-variant-ligatures: common-ligatures;
+          font-variant-ligatures: common-ligatures;
+  -webkit-font-variant-ligatures: discretionary-ligatures;
+          font-variant-ligatures: discretionary-ligatures;
+}
+
+/* ------------------------------------ Turn off ligatures */
+/* Currently not working in FF */
+/* line 76, stdin */
+.liga_off {
+  /* The ‘text-rendering’ property – OFF */
+  text-rendering: optimizeSpeed;
+  /* low-level syntax */
+  font-feature-settings: "liga" off, "dlig" off;
+  /* vendor-prefixes */
+  -moz-font-feature-settings: "liga=0", "dlig=0";
+  -ms-font-feature-settings: "liga" off, "dlig" off;
+  -webkit-font-feature-settings: "liga" off, "dlig" off;
+  /* high-level syntax */
+  -webkit-font-variant-ligatures: no-common-ligatures;
+          font-variant-ligatures: no-common-ligatures;
+  -webkit-font-variant-ligatures: no-discretionary-ligatures;
+          font-variant-ligatures: no-discretionary-ligatures;
+}
+
+/* line 90, stdin */
+.hlig {
+  /* low-level syntax */
+  font-feature-settings: "hlig";
+  /* vendor-prefixes */
+  -moz-font-feature-settings: 'hlig=1';
+  -ms-font-feature-settings: "hlig";
+  -webkit-font-feature-settings: "hlig";
+  /* high-level syntax */
+  -webkit-font-variant-ligatures: historical-ligatures;
+          font-variant-ligatures: historical-ligatures;
+}
+
+/* ------------------------------------ Small Caps */
+/* line 103, stdin */
+.smcp {
+  /* vendor-prefixes */
+  -ms-font-feature-settings: "smcp" 1;
+  -webkit-font-feature-settings: "smcp" 1;
+  /* low-level syntax */
+  font-feature-settings: "smcp" 1;
+  /* high-level syntax */
+  font-variant-caps: small-caps;
+}
+
+/* ------------------------------------ Oldstyle Figures */
+/* line 117, stdin */
+.onum {
+  /* low-level syntax */
+  font-feature-settings: 'onum';
+  /* vendor-prefixes */
+  -moz-font-feature-settings: 'onum=1';
+  -ms-font-feature-settings: 'onum';
+  -webkit-font-feature-settings: 'onum';
+  /* high-level syntax */
+  font-variant-numeric: oldstyle-nums;
+}
+
+/* ------------------------------------ Lining Figures */
+/* line 130, stdin */
+.lnum {
+  /* high-level syntax */
+  font-variant-numeric: lining-nums;
+  /* low-level syntax */
+  font-feature-settings: 'lnum';
+  /* vendor-prefixes */
+  -moz-font-feature-settings: 'lnum=1';
+  -ms-font-feature-settings: 'lnum';
+  -webkit-font-feature-settings: 'lnum';
+}
+
+/* ------------------------------------ Tabular Figures */
+/* line 143, stdin */
+.tnum {
+  /* low-level syntax */
+  font-feature-settings: 'tnum';
+  /* vendor-prefixes */
+  -moz-font-feature-settings: 'tnum=1';
+  -ms-font-feature-settings: 'tnum';
+  -webkit-font-feature-settings: 'tnum';
+  /* high-level syntax */
+  font-variant-numeric: tabular-nums;
+}
+
+/* ------------------------------------ Superscript */
+/* line 156, stdin */
+.sups {
+  /* low-level syntax */
+  font-feature-settings: "sups";
+  /* vendor-prefixes */
+  -moz-font-feature-settings: 'sups=1';
+  -moz-font-feature-settings: 'sups';
+  -ms-font-feature-settings: "sups";
+  -webkit-font-feature-settings: "sups";
+  /* high-level syntax */
+  font-variant-position: super;
+}
+
+/* ------------------------------------ Subscript */
+/* line 170, stdin */
+.subs {
+  /* low-level syntax */
+  font-feature-settings: "subs";
+  /* vendor-prefixes */
+  -moz-font-feature-settings: 'subs=1';
+  -ms-font-feature-settings: "subs";
+  -webkit-font-feature-settings: "subs";
+  /* high-level syntax */
+  font-variant-position: sub;
+}
+
+/* ------------------------------------ Numerators */
+/* line 182, stdin */
+.numr {
+  /* low-level syntax */
+  font-feature-settings: "numr" 1;
+  /* vendor-prefixes */
+  -moz-font-feature-settings: "numr=1";
+  -ms-font-feature-settings: "numr" 1;
+  -webkit-font-feature-settings: "numr" 1;
+}
+
+/* ------------------------------------ Denominators */
+/* line 193, stdin */
+.dnom {
+  /* vendor-prefixes */
+  -ms-font-feature-settings: "dnom" 1;
+  -webkit-font-feature-settings: "dnom" 1;
+  /* low-level syntax */
+  font-feature-settings: "dnom" 1;
+}
+
+/* ------------------------------------ Slashed Zero */
+/* line 204, stdin */
+.zero {
+  /* low-level syntax */
+  font-feature-settings: "zero" 1;
+  /* vendor-prefixes */
+  -moz-font-feature-settings: 'zero=1';
+  -moz-font-feature-settings: 'zero';
+  -ms-font-feature-settings: "zero";
+  -webkit-font-feature-settings: "zero" 1;
+  /* high-level syntax */
+  font-variant: slashed-zero;
+}
+
+/* ------------------------------------ Unicase */
+/* line 218, stdin */
+.unic {
+  /* low-level syntax */
+  font-feature-settings: "unic" 1;
+  /* vendor-prefixes */
+  -moz-font-feature-settings: 'unic=1';
+  -moz-font-feature-settings: 'unic';
+  -ms-font-feature-settings: "unic" 1;
+  -webkit-font-feature-settings: "unic" 1;
+  -o-font-feature-settings: "unic" 1;
+}
+
+/* ------------------------------------ Ordinals */
+/* line 231, stdin */
+.ordn {
+  /* low-level syntax */
+  font-feature-settings: "ordn" 1;
+  /* vendor-prefixes */
+  -moz-font-feature-settings: 'ordn=1';
+  -moz-font-feature-settings: 'ordn';
+  -ms-font-feature-settings: "ordn" 1;
+  -webkit-font-feature-settings: "ordn" 1;
+}
+
+/* ------------------------------------ Fractions */
+/* line 243, stdin */
+.frac {
+  /* low-level syntax */
+  font-feature-settings: "frac" 1;
+  /* vendor-prefixes */
+  -moz-font-feature-settings: 'frac=1';
+  -moz-font-feature-settings: 'frac';
+  -ms-font-feature-settings: "frac" 1;
+  -webkit-font-feature-settings: "frac" 1;
+  /* high-level syntax */
+  font-variant-numeric: diagonal-fractions;
+}
+
+/* ------------------------------------ Contextual Alternates */
+/* line 257, stdin */
+.calt {
+  /* low-level syntax */
+  font-feature-settings: "calt" 1;
+  /* vendor-prefixes */
+  -moz-font-feature-settings: 'calt=1';
+  -moz-font-feature-settings: 'calt';
+  -ms-font-feature-settings: "calt" 1;
+  -webkit-font-feature-settings: "calt" 1;
+  /* high-level syntax */
+  font-variant-alternates: contextual;
+}
+
+/* ------------------------------------ Swash */
+/* line 271, stdin */
+.swsh {
+  /* low-level syntax */
+  font-feature-settings: "swsh";
+  /* vendor-prefixes */
+  -moz-font-feature-settings: 'swsh=1';
+  -ms-font-feature-settings: "swsh";
+  -webkit-font-feature-settings: "swsh";
+  /* high-level syntax */
+}
+
+/* ------------------------------------ Historical Forms */
+/* line 283, stdin */
+.hist {
+  /* low-level syntax */
+  font-feature-settings: "hist";
+  /* vendor-prefixes */
+  -moz-font-feature-settings: 'hist=1';
+  -ms-font-feature-settings: "hist";
+  -webkit-font-feature-settings: "hist";
+  /* high-level syntax */
+  font-variant-alternates: historical-forms;
+}
+
+/* ------------------------------------ Kerning */
+/* line 296, stdin */
+.kern {
+  /*kerning on */
+  -webkit-font-kerning: normal;
+          font-kerning: normal;
+  /* kerning off */
+  /* font-kerning: none; */
+  /* low-level syntax */
+  font-feature-settings: "kern";
+  /* vendor-prefixes */
+  -moz-font-feature-settings: "kern=1";
+  -ms-font-feature-settings: "kern";
+  -webkit-font-feature-settings: "kern";
+  /*this turns on ligatures and turns on kerning */
+  /*The ‘text-rendering’ property – ON */
+  text-rendering: optimizeLegibility;
+  /* high-level syntax */
+}
+
+/* ------------------------------------ Kerning Off */
+/* line 315, stdin */
+.kern_off {
+  /*The ‘text-rendering’ property – OFF*/
+  text-rendering: optimizeSpeed;
+  /* low-level syntax */
+  font-feature-settings: "kern" off;
+  /* vendor-prefixes */
+  -moz-font-feature-settings: "kern=0";
+  -ms-font-feature-settings: "kern" off;
+  -webkit-font-feature-settings: "kern" off;
+  /* high-level syntax */
+  -webkit-font-kerning: none;
+          font-kerning: none;
+}
+
+/* ------------------------------------ Stylistic Alternates */
+/* line 330, stdin */
+.salt {
+  /*low-level syntax*/
+  font-feature-settings: "salt" 1;
+  /*vendor prefixes*/
+  -moz-font-feature-settings: "salt=1";
+  -moz-font-feature-settings: "salt";
+  -ms-font-feature-settings: "salt" 1;
+  -webkit-font-feature-settings: "salt" 1;
+}
+
+/* ------------------------------------ Superscript and Stylistic Alternates */
+/* line 342, stdin */
+.sups .salt {
+  /* low-level syntax */
+  font-feature-settings: "sups", "salt" 1;
+  /* vendor-prefixes */
+  -moz-font-feature-settings: "sups=1, salt=1";
+  -moz-font-feature-settings: "sups", "salt";
+  -ms-font-feature-settings: "sups", "salt" 1;
+  -webkit-font-feature-settings: "sups", "salt" 1;
+  /* high-level syntax */
+  font-variant-position: super;
+}
+
+/* ------------------------------------ Stylistic Alternates Off */
+/* line 356, stdin */
+.salt_off {
+  /*low-level syntax*/
+  font-feature-settings: "salt" off;
+  /*vendor prefixes*/
+  -moz-font-feature-settings: "salt=0";
+  -moz-font-feature-settings: "salt" off;
+  -ms-font-feature-settings: "salt" off;
+  -webkit-font-feature-settings: "salt" off;
+}
+
+/* ------------------------------------ Capitals to Small Caps */
+/* Note: This is not exactly the same as c2sc, since it transforms both lower- and uppercase to small caps.*/
+/* line 369, stdin */
+.c2sc {
+  /* low-level syntax */
+  font-feature-settings: "c2sc";
+  /* vendor-prefixes */
+  -moz-font-feature-settings: 'c2sc=1';
+  -ms-font-feature-settings: "c2sc";
+  -webkit-font-feature-settings: "c2sc";
+  /* high-level syntax */
+  font-variant-caps: all-small-caps;
+}
+
+/* ------------------------------------ All Small Caps (smcp & c2sc) */
+/* line 382, stdin */
+.smcp_and_c2sc {
+  /* low-level syntax */
+  font-feature-settings: "smcp" 1, "c2sc";
+  /* vendor-prefixes */
+  -moz-font-feature-settings: "smcp" 1, "c2sc" 1;
+  -moz-font-feature-settings: "smcp=1", "c2sc=1";
+  -ms-font-feature-settings: "smcp" 1, "c2sc" 1;
+  -webkit-font-feature-settings: "smcp" 1, "c2sc";
+  /* high-level syntax */
+  font-variant-caps: small-caps, all-small-caps;
+}
+
+/* ------------------------------------ Case-sensitive Forms */
+/* Note: This is not exactly the same as case, since it only transforms lowercase letters into uppercase. */
+/* line 397, stdin */
+.case {
+  /* low-level syntax */
+  font-feature-settings: "case";
+  /* vendor-prefixes */
+  -moz-font-feature-settings: "case=1";
+  -ms-font-feature-settings: "case";
+  -webkit-font-feature-settings: "case";
+  /* high-level syntax */
+  text-transform: uppercase;
+}
+
+/* ------------------------------------ Localised Forms */
+/* line 410, stdin */
+.locl {
+  /* must be added to span tag ie: */
+  /* <span lang='ru'>гпклдвзитжц</span> */
+  /* <span lang='bg'>гпклдвзитжц</span> */
+  /* low-level syntax */
+  /* high-level syntax */
+}
+
+/* ------------------------------------ ss01 - ss20 */
+/* line 420, stdin */
+.ss01 {
+  /* low-level syntax */
+  font-feature-settings: "ss01";
+  /* vendor-prefixes */
+  -moz-font-feature-settings: 'ss01=1';
+  -ms-font-feature-settings: "ss01";
+  -webkit-font-feature-settings: "ss01";
+}
+
+/* line 429, stdin */
+.ss02 {
+  /* low-level syntax */
+  font-feature-settings: "ss02";
+  /* vendor-prefixes */
+  -moz-font-feature-settings: 'ss02=1';
+  -ms-font-feature-settings: "ss02";
+  -webkit-font-feature-settings: "ss02";
+}
+
+/* line 438, stdin */
+.ss03 {
+  /* low-level syntax */
+  font-feature-settings: "ss03";
+  /* vendor-prefixes */
+  -moz-font-feature-settings: 'ss03=1';
+  -ms-font-feature-settings: "ss03";
+  -webkit-font-feature-settings: "ss03";
+}
+
+/* line 447, stdin */
+.ss04 {
+  /* low-level syntax */
+  font-feature-settings: "ss04";
+  /* vendor-prefixes */
+  -moz-font-feature-settings: 'ss04=1';
+  -ms-font-feature-settings: "ss04";
+  -webkit-font-feature-settings: "ss04";
+}
+
+/* line 456, stdin */
+.ss05 {
+  /* low-level syntax */
+  font-feature-settings: "ss05";
+  /* vendor-prefixes */
+  -moz-font-feature-settings: 'ss05=1';
+  -ms-font-feature-settings: "ss05";
+  -webkit-font-feature-settings: "ss05";
+}
+
+/* line 466, stdin */
+.ss06 {
+  /* low-level syntax */
+  font-feature-settings: "ss06";
+  /* vendor-prefixes */
+  -moz-font-feature-settings: 'ss06=1';
+  -ms-font-feature-settings: "ss06";
+  -webkit-font-feature-settings: "ss06";
+}
+
+/* line 475, stdin */
+.ss07 {
+  /* low-level syntax */
+  font-feature-settings: "ss07";
+  /* vendor-prefixes */
+  -moz-font-feature-settings: 'ss07=1';
+  -ms-font-feature-settings: "ss07";
+  -webkit-font-feature-settings: "ss07";
+}
+
+/* line 484, stdin */
+.ss08 {
+  /* low-level syntax */
+  font-feature-settings: "ss08";
+  /* vendor-prefixes */
+  -moz-font-feature-settings: 'ss08=1';
+  -ms-font-feature-settings: "ss08";
+  -webkit-font-feature-settings: "ss08";
+}
+
+/* line 493, stdin */
+.ss09 {
+  /* low-level syntax */
+  font-feature-settings: "ss09";
+  /* vendor-prefixes */
+  -moz-font-feature-settings: 'ss09=1';
+  -ms-font-feature-settings: "ss09";
+  -webkit-font-feature-settings: "ss09";
+}
+
+/* line 502, stdin */
+.ss10 {
+  /* low-level syntax */
+  font-feature-settings: "ss10";
+  /* vendor-prefixes */
+  -moz-font-feature-settings: 'ss10=1';
+  -ms-font-feature-settings: "ss10";
+  -webkit-font-feature-settings: "ss10";
+}
+
+/* line 511, stdin */
+.ss11 {
+  /* low-level syntax */
+  font-feature-settings: "ss11";
+  /* vendor-prefixes */
+  -moz-font-feature-settings: 'ss11=1';
+  -ms-font-feature-settings: "ss11";
+  -webkit-font-feature-settings: "ss11";
+}
+
+/* line 520, stdin */
+.ss12 {
+  /* low-level syntax */
+  font-feature-settings: "ss12";
+  /* vendor-prefixes */
+  -moz-font-feature-settings: 'ss12=1';
+  -ms-font-feature-settings: "ss12";
+  -webkit-font-feature-settings: "ss12";
+}
+
+/* line 529, stdin */
+.ss13 {
+  /* low-level syntax */
+  font-feature-settings: "ss13";
+  /* vendor-prefixes */
+  -moz-font-feature-settings: 'ss13=1';
+  -ms-font-feature-settings: "ss13";
+  -webkit-font-feature-settings: "ss13";
+}
+
+/* line 538, stdin */
+.ss14 {
+  /* low-level syntax */
+  font-feature-settings: "ss14";
+  /* vendor-prefixes */
+  -moz-font-feature-settings: 'ss14=1';
+  -ms-font-feature-settings: "ss14";
+  -webkit-font-feature-settings: "ss14";
+}
+
+/* line 547, stdin */
+.ss15 {
+  /* low-level syntax */
+  font-feature-settings: "ss15";
+  /* vendor-prefixes */
+  -moz-font-feature-settings: 'ss15=1';
+  -ms-font-feature-settings: "ss15";
+  -webkit-font-feature-settings: "ss15";
+}
+
+/* line 556, stdin */
+.ss16 {
+  /* low-level syntax */
+  font-feature-settings: "ss16";
+  /* vendor-prefixes */
+  -moz-font-feature-settings: 'ss16=1';
+  -ms-font-feature-settings: "ss16";
+  -webkit-font-feature-settings: "ss16";
+}
+
+/* line 565, stdin */
+.ss17 {
+  /* low-level syntax */
+  font-feature-settings: "ss17";
+  /* vendor-prefixes */
+  -moz-font-feature-settings: 'ss17=1';
+  -ms-font-feature-settings: "ss17";
+  -webkit-font-feature-settings: "ss17";
+}
+
+/* line 574, stdin */
+.ss18 {
+  /* low-level syntax */
+  font-feature-settings: "ss18";
+  /* vendor-prefixes */
+  -moz-font-feature-settings: 'ss18=1';
+  -ms-font-feature-settings: "ss18";
+  -webkit-font-feature-settings: "ss18";
+}
+
+/* line 583, stdin */
+.ss19 {
+  /* low-level syntax */
+  font-feature-settings: "ss19";
+  /* vendor-prefixes */
+  -moz-font-feature-settings: 'ss19=1';
+  -ms-font-feature-settings: "ss19";
+  -webkit-font-feature-settings: "ss19";
+}
+
+/* line 592, stdin */
+.ss20 {
+  /* low-level syntax */
+  font-feature-settings: "ss20";
+  /* vendor-prefixes */
+  -moz-font-feature-settings: 'ss20=1';
+  -ms-font-feature-settings: "ss20";
+  -webkit-font-feature-settings: "ss20";
+}

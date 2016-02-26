@@ -1,0 +1,267 @@
+/**
+ * @section Typography
+ * Sets font styles for entire site
+ */
+
+
+/**
+ * Removes list styling.
+ * For semantic reasons, should only be used on unordered lists.
+ */
+.list-unstyled {
+	margin-left: 0;
+	list-style: none;
+}
+
+/**
+ * Display lists on a single line.
+ */
+
+.list-inline {
+  list-style: none;
+  margin-left: calc-em(-8px);
+  margin-right: calc-em(-8px);
+  padding: 0;
+}
+
+.list-inline > li {
+  display: inline;
+  margin-left: calc-em(8px);
+  margin-right: calc-em(8px);
+}
+
+
+/**
+ * Small Caps
+ */
+ @mixin smallcaps($font-size) {
+	text-transform: uppercase;
+	letter-spacing: .15em;
+	font-size: $font-size;
+}
+
+/**
+	Tracked All Caps
+*/
+.allUpper{
+	letter-spacing: 0.1em;
+}
+
+
+/**
+ * Type-size-calc
+ */
+$line-height: 1.4;
+
+@mixin type-size-calc-xlarge($font-size) {
+	font-size: $font-size*1;
+}
+@mixin type-size-calc-large($font-size) {
+	font-size: $font-size*0.8;
+}
+@mixin type-size-calc-medium($font-size) {
+	font-size: $font-size*0.65;
+}
+@mixin type-size-calc-small($font-size) {
+	font-size: $font-size*0.55;
+}
+@mixin type-size-calc-xsmall($font-size) {
+	font-size: $font-size*0.5;
+}
+
+@mixin type-size-calc($font-size) {
+	font-size: $font-size*0.45;
+}
+
+/**
+ * Heading styling for h1 through h6 elements.
+ * Heading class lets you use one heading type for semantics, but style it as another heading type.
+ */
+
+h1, h2, h3, h4, h5, h6, p, .h1, .h2, .h3, .h4, .h5, .h6, .p {
+	line-height: 1.4;
+	font-weight: normal;
+	margin-bottom: .5rem;
+	padding-top: .5rem;
+	word-wrap: break-word;
+}
+
+h1, .h1, .h1 p {
+	$size: 162px;
+	text-transform: uppercase;
+	font-family: $font-secondary;
+	text-align: center;
+	@include type-size-calc(120px);
+	@include m( min, $bp-xsmall) {
+		@include type-size-calc-xsmall(130px);
+	}
+	@include m( min, $bp-small) {
+		@include type-size-calc-xsmall($size);
+	}
+	@include m( min, $bp-medium) {
+		@include type-size-calc-medium($size);
+	}
+	@include m( min, $bp-large) {
+		@include type-size-calc-large($size);
+	}
+	@include m( min, $bp-xlarge) {
+		@include type-size-calc-xlarge($size);
+	}
+}
+
+// h2, .h2, .h2 p {
+// 	$size: 130px;
+// 	line-height: 1.1;
+// 	font-family: $font-secondary;
+// 	@include type-size-calc($size);
+
+// 	@include m( min, $bp-xsmall) {
+// 		@include type-size-calc-xsmall($size);
+// 	}
+// 	@include m( min, $bp-small) {
+// 		@include type-size-calc-small($size);
+// 	}
+// 	@include m( min, $bp-medium) {
+// 		@include type-size-calc-medium($size);
+// 	}
+// }
+
+h2.overflowText {
+	font-size: 64px;
+}
+
+h2, .h2, .h2 p {
+	$size: 81px;
+	font-weight: 300;
+	@include type-size-calc($size);
+
+	@include m( min, $bp-xsmall) {
+		@include type-size-calc-xsmall($size);
+	}
+	@include m( min, $bp-small) {
+		@include type-size-calc-small($size);
+	}
+	@include m( min, $bp-medium) {
+		@include type-size-calc-medium($size);
+	}
+	@include m( min, $bp-large) {
+		@include type-size-calc-large($size);
+	}
+}
+
+h3, .h3, .h3 p {
+	$size: 72px;
+	font-weight: 300;
+	@include type-size-calc($size);
+
+	@include m( min, $bp-xsmall) {
+		@include type-size-calc-xsmall($size);
+	}
+	@include m( min, $bp-small) {
+		@include type-size-calc-small($size);
+	}
+	@include m( min, $bp-medium) {
+		@include type-size-calc-medium($size);
+	}
+	@include m( min, $bp-large) {
+		@include type-size-calc-large($size);
+	}
+}
+
+h4,
+.h4, .h4 p {
+	font-size: 30px;
+  	line-height: 36px;
+}
+
+h5, .h5 {
+	font-size: 18px;
+}
+
+h6, .h6{
+	font-size: 15px!important;
+	&.list-title, &.page-title, &.section-title{
+		text-transform: uppercase;
+		font-size: 100%;
+		font-weight: 700;
+	}
+	&.text-title{
+		color: $color-brand;
+		padding-top: 4rem;
+		padding-bottom: 1rem;
+	}
+	&.page-title{
+		+ .text-title{
+			padding-top: 1rem;
+		}
+	}
+}
+
+.h7 {
+	@include smallcaps(10px);
+	font-weight: 300;
+}
+
+p, .p{
+	font-size: 15px;
+}
+/**
+ * Lines, Quotes and Emphasis
+ */
+
+strong {
+	font-weight: bold;
+}
+
+em {
+	font-style: italic;
+}
+
+sub,
+sup {
+	position: relative;
+	font-size: 85%;
+	font-weight: bold;
+	line-height: 0;
+	vertical-align: baseline;
+	margin-left: calc-em(4px);
+}
+
+sup {
+	top: calc-em(-8px);
+}
+
+sub {
+	bottom: calc-em(-4px);
+}
+
+/**
+ * Highlighting colors
+ */
+::selection {
+	color: $color-white;
+	background: $color-primary;
+}
+
+/**
+ * Blockquotes
+ */
+
+blockquote {
+	border-left: calc-em(4px) solid $color-gray-light;
+	margin-bottom: $spacing;
+	padding-left: $spacing;
+	padding-right: $spacing;
+}
+
+blockquote, q {
+	quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+	content: '';
+	content: none;
+}

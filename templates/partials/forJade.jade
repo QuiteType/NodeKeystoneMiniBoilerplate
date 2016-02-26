@@ -1,0 +1,41 @@
+-
+	function slugify(text){
+		return text.toString().toLowerCase()
+		.replace(/\s+/g, '-')         
+		.replace(/[^\w\-]+/g, '')     
+		.replace(/\-\-+/g, '-')       
+		.replace(/^-+/, '')           
+		.replace(/-+$/, '');          
+	}
+
+	function compareDates(date1, date2) {
+		return new Date(date1).getDate() > new Date(date2).getDate();
+	}
+
+	function today(){
+		var today = new Date();
+		var dd = today.getDate();
+		var mm = today.getMonth()+1; //January is 0!
+		var yyyy = today.getFullYear();
+
+		if(dd<10) {
+			dd='0'+dd;
+		} 
+
+		if(mm<10) {
+			mm='0'+mm;
+		} 
+
+		today = mm+'/'+dd+'/'+yyyy;
+		return today;
+	}
+
+	function ClouSize(str, width){
+		var width = typeof width !== 'undefined' ?  width : 1000;
+		var str = str.replace("upload/", "upload/w_" + width + "/");
+		return str;
+	}
+
+	String.prototype.capitalize = function() {
+	    return this.charAt(0).toUpperCase() + this.slice(1);
+	}

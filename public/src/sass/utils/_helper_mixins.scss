@@ -1,0 +1,405 @@
+@mixin vanish(){
+    opacity: 0;
+    pointer-events: none;
+    max-height: 0px;
+    transition: all $fast;
+}
+@mixin appear(){
+    opacity: 1;
+    pointer-events: initial;
+    max-height: 9999999px;
+    transition: all $fast;
+}
+
+@mixin vanishClean(){
+    opacity: 0;
+    pointer-events: none;
+    transition: all $fast;
+}
+@mixin appearClean(){
+    opacity: 1;
+    pointer-events: initial;
+    transition: all $fast;
+}
+
+
+/* User Select None */
+@mixin user-select-none(){
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+/* Media Query Mixin */
+@mixin m($updown: min, $amount: 600px) {
+  @if $updown == "max" {
+    @media (max-width: $amount) { @content; }
+  }
+  @if $updown == "min" {
+    @media (min-width: $amount) { @content; }
+  }
+}
+
+/* Responsive breaks */
+@mixin respond-to($media) {
+	@if $media == $break0 {
+		@media only screen and (min-width: $break0) { @content; }
+	} @else if $media == $break1 {
+		@media only screen and (min-width: $break1) { @content; }
+	} @else if $media == $break2 {
+		@media only screen and (min-width: $break2) { @content; }
+	} @else if $media == $break2b {
+		@media only screen and (min-width: $break2b) { @content; }
+	} @else if $media == $break3 {
+		@media only screen and (min-width: $break3) { @content; }
+	} @else if $media == $break4 {
+		@media only screen and (min-width: $break4) { @content; }
+	}
+}
+
+/* Input box */
+@mixin input-box($style:normal) {
+	// Responsive sizes are added to parent
+	@include transition(all $rabbit linear);
+	@include border-radius($radius);
+	font-size: inherit;
+	border: $border-1;
+	padding: .35em .5em;
+	background: $white;
+	@if $style == normal {
+		@include box-shadow($shadow-clear);
+	}
+	@if $style == display {
+		@include box-shadow($shadow-popover-0);
+		font-weight: $book-weight;
+	}
+	@include placeholder {
+		// @include transition(color $rabbit ease); messes up sidebar lookup boxes for some unknown reason
+		font-style: normal;
+	}
+	@include focus-placeholder {
+		color: $gray-light-50;
+	}
+	&:focus {
+		border: $border-1;
+		@if $style == normal {
+			@include box-shadow($shadow-popover-0);
+		}
+		@if $style == display {
+			@include box-shadow($shadow-popover-1);
+		}
+	}
+}
+
+/* Shadows */
+@mixin shadow-top-inset($size, $color) {
+	@include box-shadow(inset 0 $size $size $size * -1 $color);
+}
+@mixin shadow-bottom-inset($size, $color) {
+	@include box-shadow(inset 0 $size * -1 $size $size * -1 $color);
+}
+@mixin shadow-top-bottom-inset($size, $color) {
+	@include box-shadow(
+		inset 0 $size $size $size * -1 $color,
+		inset 0 $size * -1 $size $size * -1 $color
+	);
+}
+
+/* Cursors */
+@mixin pointer() {
+  cursor: pointer;
+  user-select: none;
+}
+
+@mixin default() {
+  cursor: default;
+  user-select: text;
+}
+
+@mixin text() {
+  cursor: text;
+  user-select: text;
+}
+
+@mixin grab-cursor {
+  // http://www.google.com/intl/en_ALL/mapfiles/openhand.cur
+  cursor: url('data:image/vnd.microsoft.icon;base64,AAACAAEAICACAAcABQAwAQAAFgAAACgAAAAgAAAAQAAAAAEAAQAAAAAAAAEAAAAAAAAAAAAAAgAAAAAAAAAAAAAA////AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD8AAAA/AAAAfwAAAP+AAAH/gAAB/8AAA//AAAd/wAAGf+AAAH9gAADbYAAA2yAAAZsAAAGbAAAAGAAAAAAAAA//////////////////////////////////////////////////////////////////////////////////////gH///4B///8Af//+AD///AA///wAH//4AB//8AAf//AAD//5AA///gAP//4AD//8AF///AB///5A////5///8='), all-scroll;
+  cursor: -webkit-grab;
+  cursor: -moz-grab;
+  cursor: -o-grab;
+  cursor: -ms-grab;
+  cursor: grab;
+  user-select: none;
+}
+
+@mixin grabbing-cursor {
+  // http://www.google.com/intl/en_ALL/mapfiles/closedhand.cur
+  cursor: url('data:image/vnd.microsoft.icon;base64,AAACAAEAICACAAcABQAwAQAAFgAAACgAAAAgAAAAQAAAAAEAAQAAAAAAAAEAAAAAAAAAAAAAAgAAAAAAAAAAAAAA////AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD8AAAA/AAAAfwAAAP+AAAH/gAAB/8AAAH/AAAB/wAAA/0AAANsAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA//////////////////////////////////////////////////////////////////////////////////////gH///4B///8Af//+AD///AA///wAH//+AB///wAf//4AH//+AD///yT/////////////////////////////8='), all-scroll;
+  cursor: -webkit-grabbing;
+  cursor: -moz-grabbing;
+  cursor: -o-grabbing;
+  cursor: -ms-grabbing;
+  cursor: grabbing;
+  user-select: none;
+}
+
+/* BACKGROUND GRADIENT */
+@mixin background-gradient($startColor: #3C3C3C, $endColor: #999999) {
+    background-color: $startColor;
+    background-image: -webkit-gradient(linear, left top, left bottom, from($startColor), to($endColor));
+    background-image: -webkit-linear-gradient(top, $startColor, $endColor);
+    background-image:    -moz-linear-gradient(top, $startColor, $endColor);
+    background-image:     -ms-linear-gradient(top, $startColor, $endColor);
+    background-image:      -o-linear-gradient(top, $startColor, $endColor);
+    background-image:         linear-gradient(top, $startColor, $endColor);
+    filter:            progid:DXImageTransform.Microsoft.gradient(startColorStr='#{$startColor}', endColorStr='#{$endColor}');
+}
+
+/* BACKGROUND HORIZONTAL */
+@mixin background-horizontal($startColor: #3C3C3C, $endColor: #999999) {
+    background-color: $startColor;
+    background-image: -webkit-gradient(linear, left top, right top, from($startColor), to($endColor));
+    background-image: -webkit-linear-gradient(left, $startColor, $endColor);
+    background-image:    -moz-linear-gradient(left, $startColor, $endColor);
+    background-image:     -ms-linear-gradient(left, $startColor, $endColor);
+    background-image:      -o-linear-gradient(left, $startColor, $endColor);
+    background-image:         linear-gradient(left, $startColor, $endColor);
+    filter:            progid:DXImageTransform.Microsoft.gradient(startColorStr='#{$startColor}', endColorStr='#{$endColor}', gradientType='1');
+}
+
+/* BACKGROUND RADIAL */
+@mixin background-radial($startColor: #FFFFFF, $startPos: 0%, $endColor: #000000, $endPos:100%) {
+    background: -moz-radial-gradient(center, ellipse cover, $startColor $startPos, $endColor $endPos);
+    background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop($startPos,$startColor), color-stop($endPos,$endColor));
+    background: -webkit-radial-gradient(center, ellipse cover, $startColor $startPos,$endColor $endPos);
+    background: -o-radial-gradient(center, ellipse cover, $startColor $startPos,$endColor $endPos);
+    background: -ms-radial-gradient(center, ellipse cover, $startColor $startPos,$endColor $endPos);
+    background: radial-gradient(ellipse at center, $startColor $startPos,$endColor $endPos);
+}
+
+/* BACKGROUND SIZE */
+@mixin background-size($width: 100%, $height: $width) {
+  @if type-of($width) == 'number' and $height != null {
+    @include css3-prefix('background-size', $width $height);
+  } @else {
+    @include css3-prefix('background-size', $width);
+  }
+}
+
+/* BACKGROUND COLOR OPACITY */
+@mixin background-opacity($color: #000, $opacity: 0.85) {
+  background: $color;
+  background: rgba($color, $opacity);
+}
+
+/* BORDER RADIUS */
+@mixin border-radius($radius: 5px) {
+    @include css3-prefix('border-radius', $radius);
+}
+
+@mixin border-radius-separate($topLeftRadius: 5px, $topRightRadius: 5px, $bottomLeftRadius: 5px, $bottomRightRadius: 5px) {
+  -webkit-border-top-left-radius:     $topLeftRadius;
+  -webkit-border-top-right-radius:    $topRightRadius;
+  -webkit-border-bottom-right-radius: $bottomRightRadius;
+  -webkit-border-bottom-left-radius:  $bottomLeftRadius;
+
+  -moz-border-radius-topleft:     $topLeftRadius;
+  -moz-border-radius-topright:    $topRightRadius;
+  -moz-border-radius-bottomright: $bottomRightRadius;
+  -moz-border-radius-bottomleft:  $bottomLeftRadius;
+
+  border-top-left-radius:     $topLeftRadius;
+  border-top-right-radius:    $topRightRadius;
+  border-bottom-right-radius: $bottomRightRadius;
+  border-bottom-left-radius:  $bottomLeftRadius;
+}
+
+/* BOX */
+@mixin box($orient: horizontal, $pack: center, $align: center) {
+  display: -webkit-box;
+  display: -moz-box;
+  display: box;
+
+  @include css3-prefix('box-orient', $orient);
+  @include css3-prefix('box-pack', $pack);
+  @include css3-prefix('box-align', $align);
+}
+
+/* BOX RGBA */
+@mixin box-rgba($r: 60, $g: 3, $b: 12, $opacity: 0.23, $color: #3C3C3C) {
+  background-color: transparent;
+  background-color: rgba($r, $g, $b, $opacity);
+            filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#{$color}',endColorstr='#{$color}');
+            zoom:   1;
+}
+
+/* BOX SHADOW */
+@mixin box-shadow($x: 2px, $y: 2px, $blur: 5px, $color: rgba(0,0,0,.4), $inset: "") {
+  @if ($inset != "") {
+    @include css3-prefix('box-shadow', $inset $x $y $blur $color);
+  } @else {
+    @include css3-prefix('box-shadow', $x $y $blur $color);
+  }
+}
+
+/* BOX SIZING */
+@mixin box-sizing($type: border-box) {
+  @include css3-prefix('box-sizing', $type);
+}
+
+/* COLUMNS */
+@mixin columns($count: 3, $gap: 10) {
+  @include css3-prefix('column-count', $count);
+  @include css3-prefix('column-gap', $gap);
+}
+
+/* DOUBLE BORDERS */
+@mixin double-borders($colorOne: #3C3C3C, $colorTwo: #999999, $radius: 0) {
+  border: 1px solid $colorOne;
+  @include css3-prefix('box-shadow', 0 0 0 1px $colorTwo);
+  @include border-radius( $radius );
+}
+
+/* FLEX */
+@mixin flex($value: 1) {
+  @include css3-prefix('box-flex', $value);
+}
+
+/* FLIP */
+@mixin flip($scaleX: -1) {
+  @include css3-prefix('transform', scaleX($scaleX));
+  filter:            FlipH;
+  -ms-filter:        "FlipH";
+}
+
+/* FONT FACE */
+@mixin font-face($fontFamily: myFont, $eotFileSrc: 'myFont.eot', $woffFileSrc: 'myFont.woff', $ttfFileSrc: 'myFont.ttf') {
+  font-family: $fontFamily;
+  src: url($eotFileSrc)  format('eot'),
+       url($woffFileSrc) format('woff'),
+       url($ttfFileSrc)  format('truetype');
+}
+
+/* OPACITY */
+@mixin opacity($opacity: 0.5) {
+    $opacityMultiplied: ($opacity * 100);
+    filter:         alpha(opacity=$opacityMultiplied);
+    -ms-filter:     "progid:DXImageTransform.Microsoft.Alpha(Opacity=" + $opacityMultiplied + ")";
+    @include css3-prefix('opacity', $opacity);
+}
+
+/* OUTLINE RADIUS */
+@mixin outline-radius($radius: 5px) {
+  @include css3-prefix('outline-radius', $radius);
+}
+
+/* RESIZE */
+@mixin resize($direction: both) {
+  @include css3-prefix('resize', $direction);
+}
+
+/* ROTATE*/
+@mixin rotate($deg: 0, $m11: 0, $m12: 0, $m21: 0, $m22: 0) {
+  @include css3-prefix('transform', rotate($deg + deg));
+  filter: progid:DXImageTransform.Microsoft.Matrix(
+       M11=#{$m11}, M12=#{$m12}, M21=#{$m21}, M22=#{$m22}, sizingMethod='auto expand');
+    zoom: 1;
+}
+
+/* TEXT SHADOW */
+@mixin text-shadow($x: 2px, $y: 2px, $blur: 5px, $color: rgba(0,0,0,.4)) {
+    text-shadow: $x $y $blur $color;
+}
+
+/* TRANSFORM  */
+@mixin transform($params) {
+  @include css3-prefix('transform', $params);
+}
+
+/* TRANSFORM STYLE */
+@mixin transform-style($style: preserve-3d) {
+  @include css3-prefix('transform-style', $style);
+}
+
+/* TRIPLE BORDERS */
+@mixin triple-borders($colorOne: #3C3C3C, $colorTwo: #999999, $colorThree: #000000, $radius: 0) {
+    border: 1px solid $colorOne;
+    @include border-radius($radius);
+    @include css3-prefix('box-shadow', 0 0 0 1px $colorTwo, 0 0 0 2px $colorThree);
+}
+
+@mixin page-instructions {
+	@include divider-bg(100%);
+	font-size: $large;
+	font-weight: $book-weight;
+	color: $gray-dark;
+	text-align: center;
+	line-height: 5.5em;
+	padding-bottom: $table-heading-height;
+	@include media(min, $break0) {
+		font-size: $larger;
+	}
+	@include media(min, $break1) {
+		font-size: $xxlarge;
+		font-weight: $xlight-weight;
+	}
+}
+
+@mixin caps($tracked:$tracked-1) {
+	text-transform: uppercase;
+	letter-spacing: $tracked;
+}
+
+// Underlines for links
+@mixin link-underline {
+	@include background-image(linear-gradient(transparentize($gray-light, 1) 50%, transparentize($gray-light, .3) 50%));
+	background-repeat: repeat-x;
+	background-size: 2px 2px;
+	background-position: 0 .92em;
+	&:hover {
+		@include background-image(linear-gradient(transparentize($gray-light, 1) 50%, transparentize($blue, .3) 50%));
+		background-repeat: repeat-x;
+		background-size: 2px 2px;
+		background-position: 0 .92em;
+	}
+}
+@mixin link($color){
+  a, a:link, a{
+    color: $color;
+  }
+}
+
+// @font-face mixin
+// Order of the includes matters, and it is: normal, bold, italic, bold+italic.
+// Forked from Bourbon. https://github.com/thoughtbot/bourbon/
+
+@mixin font-face($font-family, $file-path, $weight: normal, $style: normal) {
+  @font-face {
+    font-family: $font-family;
+    font-weight: $weight;
+    font-style: $style;
+
+    src: url('#{$file-path}.eot');
+    src: url('#{$file-path}.eot?#iefix') format('embedded-opentype'),
+         url('#{$file-path}.woff') format('woff'),
+         url('#{$file-path}.ttf') format('truetype'),
+         url('#{$file-path}.svg##{$font-family}') format('svg');
+  }
+}
+
+// Strip units from values
+@function strip-unit($num) {
+  @return $num / ($num * 0 + 1);
+}
+
+// Calculate ems from pixels
+@function calc-em($px, $base: 16) {
+  $px: strip-unit($px);
+  $base: strip-unit($base);
+  @if $px == 1 {
+    @return 0.0725em;
+  }
+  @return ($px / $base) * 1em;
+}

@@ -1,0 +1,226 @@
+
+///////////////////////////////////////
+//Bootstrap Fixs
+
+a, a:link, a:visited{
+ color: $color-black;
+ @include pointer;
+}
+a:focus, a:active{
+	outline: none;
+}
+a, a:hover, a:focus, a:active{
+	text-decoration: none;
+}
+html, body{
+	overflow: hidden;
+}
+html{
+	overflow-y:scroll;
+}
+body{
+    position: relative;
+	margin-bottom: 0;
+	padding-top: 0;
+	background: $color-gray-dark;
+	text-rendering: geometricPrecision;
+	font-smoothing: subpixel-antialiased;
+	-webkit-font-smoothing: antialiased;
+	color: $color-white;
+}
+::-moz-selection { 
+	background: $color-brand; 
+}
+::selection { 
+	background: $color-brand; 
+}
+img.center{
+	margin-right: auto;
+	margin-left: auto;
+	display: block;
+}
+.centerWrap{
+	display: table;
+	.center{
+		display: table-cell;
+		margin-right: auto;
+		margin-left: auto;
+		vertical-align: middle;
+	}
+}
+
+// Webkit Scrollbar
+::-webkit-scrollbar {  
+    width:6px;
+    height:6px;
+    background-color:transparent;
+}
+::-webkit-scrollbar-track {
+    background-color:transparent;
+}
+::-webkit-scrollbar-track-piece {
+    background-color:transparent;
+}
+::-webkit-scrollbar-thumb {  
+    background-color: $color-brand;
+}
+
+///////////////////////////////////////
+// Autofill
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+    transition: background-color 900000s ease-in-out 0s;
+}
+
+///////////////////////////////////////
+// Select text
+::-moz-selection {
+	background-color: $color-brand!important;
+	color: $color-white;
+}
+::selection {
+	background-color: $color-brand!important;
+	color: $color-white;
+}
+::-o-selection {
+	background-color: $color-brand!important;
+	color: $color-white;
+}
+::-ms-selection {
+	background-color: $color-brand!important;
+	color: $color-white;
+}
+::-webkit-selection {
+	background-color: $color-brand!important;
+	color: $color-white;
+}
+
+///////////////////////////////////////
+// Placeholder text
+::-webkit-input-placeholder {
+    color: $color-gray-lighter!important;
+}
+input-placeholder {
+    color: $color-gray-lighter!important;
+}
+:-moz-placeholder {
+    color: $color-gray-lighter!important;
+}
+::-moz-placeholder {
+    color: $color-gray-lighter!important;
+}
+:-ms-input-placeholder {
+    color: $color-gray-lighter!important;
+}
+#scrollspy{
+	position: relative;
+}
+
+///////////////////////////////////////
+//Fonts
+.w100{
+	font-weight: 100;
+}
+.w200{
+	font-weight: 200;
+}
+.w300{
+	font-weight: 300;
+}
+.w400{
+	font-weight: 400;
+}
+.w500{
+	font-weight: 500;
+}
+.w600{
+	font-weight: 600;
+}
+.w700{
+	font-weight: 700;
+}
+.w800{
+	font-weight: 800;
+}
+.w900{
+	font-weight: 900;
+}
+.italic{
+	font-style: italic;
+}
+
+///////////////////////////////////////
+//OVERFLOW
+.overflowText{
+	h2{
+		white-space: nowrap;
+		overflow: hidden;
+		overflow-x: scroll;
+		margin-bottom: 0;
+		box-shadow: none;
+		border: none;
+		outline: 0;
+	    padding-top: 0;
+	    margin-top: .5em;
+	    position: relative;
+	    @include text();
+	    height: auto;
+	}
+
+    &:before {
+    	z-index: 99;
+		content:'';
+		width: 150px;
+		height: 100%;
+		position:absolute;
+		pointer-events: none;
+		right:0;
+		user-select: none;
+		background: linear-gradient(to right, rgba($color-gray-lightest,0) 0%,rgba($color-gray-lightest,1) 75%);
+		.main[color="white"] & {
+			background: linear-gradient(to right, rgba($color-white,0) 0%,rgba($color-white,1) 75%);
+		}
+	}
+	::-webkit-scrollbar { 
+	    display: none; 
+	}
+}
+
+///////////////////////////////////////
+//FORMS
+input, .form-control, .form-control:focus{
+	background: none;
+    border: none;
+    box-shadow: none;
+    outline: none !important;
+    height: auto;
+}
+
+///////////////////////////////////////
+// FLASH MESSAGES
+#flash-messages{
+	> *{
+		margin: 0;
+	    text-align: center;
+	    padding: 0;
+	}
+}
+
+///////////////////////////////////////
+//Icons
+
+.icon-label {
+	font-size: 15px;
+	display: inline-block;
+  	padding: 0;
+  	color: $color-gray-light;
+    top: -.3em;
+    position: relative;
+}
+
+
+
+
+

@@ -1,0 +1,15 @@
+///////////////////////////////////////
+// Buttons
+
+button.btn{
+	&.validating{
+		transition: all $fast;
+		&.disabled{
+			transition: all $fast;
+			background: $color-gray-lighter!important;
+		}
+	}
+	&:focus, &:active, &:active:focus{
+		outline: none;
+	}
+}

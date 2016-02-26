@@ -1,0 +1,64 @@
+
+
+.icon{
+	width: auto!important;
+	display: inline-block;
+    font: normal normal normal 35px/0 MCKL_icons;
+    top: 50%;
+    position: relative;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-{
+	&close:before{
+		content: "x";
+	}
+	&close-circle:before{
+		content: "X";
+	}
+	&plus:before{
+		content: "t";
+	}
+	&plus-circle:before{
+		content: "T";
+	}
+	&cart:before{
+		content: "C";
+	}
+	&refresh:before{
+		content: "R";
+	}
+	&check:before{
+		content: "V";
+	}
+	&right-arrow:before{
+		content: "a";
+	}
+	&left-arrow:before{
+		content: "b";
+	}
+	&top-arrow:before{
+		content: "c";
+	}
+	&bottom-arrow:before{
+		content: "d";
+	}
+	&left-carot:before{
+		content: "<";
+	}
+	&right-carot:before{
+		content: ">";
+	}
+}
+
+.bigIcon{
+	&:before{
+		position: relative;
+		font-size: 1.2em;
+		top: .13em;
+		padding-right: .25em;
+
+	}
+}
