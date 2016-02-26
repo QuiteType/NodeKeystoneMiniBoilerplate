@@ -1,7 +1,12 @@
 include ../mixins/flash-messages
 
 doctype html
-html
+
+- var page = "default"
+
+block context
+
+html(page="#{page}")
 
 	- if (typeof(data) !== 'undefined'){
 		script(type='text/javascript').
@@ -84,9 +89,6 @@ html
 
 		//- FOOTER
 		.container: #footer
-
-			//- You don't _have_ to include a link saying your site is powered by KeystoneJS, but we appreciate it!
-			p Powered by <a href="http://keystonejs.com" target="_blank">KeystoneJS</a>.
 
 
 		//- JAVASCRIPT
