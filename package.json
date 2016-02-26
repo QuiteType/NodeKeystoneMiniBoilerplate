@@ -12,20 +12,21 @@
     "url": "https://github.com/quitetype/nodekeystoneminiboilerplate"
   },
   "dependencies": {
-    "keystone": "*",
-    "browserify": "*",
     "async": "*",
+    "browserify": "*",
     "colors": "*",
+    "dotenv": "*",
     "grappling-hook": "*",
     "jade": "*",
+    "keystone": "*",
     "keystone-utils": "*",
     "keystoneplus": "*",
     "mongodb": "*",
     "mongoose": "*",
-    "underscore": "*",
     "node-sass": "*",
-    "node-sass-middleware": "*", 
-    "dotenv": "*"
+    "node-sass-middleware": "*",
+    "phantomjs-prebuilt": "^2.1.4",
+    "underscore": "*"
   },
   "devDependencies": {
     "del": "*",
